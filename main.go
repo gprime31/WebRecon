@@ -172,7 +172,7 @@ func runCommonspeakGeneration(domains []string, program string, blockNum string,
 
 func RunAmass(fleetName string, outputPath string, wg *sync.WaitGroup) {
 	// run amass
-	RunAmassCommand := "amass enum -passive -timeout 30 -df ./Programs/" + fleetName + "/recon-data/" + "domains.txt | tee -a " + outputPath + "amass.out"
+	RunAmassCommand := "amass enum -timeout 30 -df ./Programs/" + fleetName + "/recon-data/" + "domains.txt | tee -a " + outputPath + "amass.out"
 	fmt.Println("Running Amass - " + RunAmassCommand)
 	exec.Command("bash", "-c", RunAmassCommand).Output()
 	//fmt.Println("amass out: " + string(RunAmassOut))
